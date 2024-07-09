@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+
+    input[type="text"],
+    select {
+        @apply bg-gray-200 text-gray-800 rounded-md border-azul-600 h-10 placeholder:text-sm w-full;
+    }
+
+    select:focus,
+    input[type="text"]:focus,
+    textarea {
+        @apply focus:border-azul-900 focus:outline-none focus:ring-1 ring-azul-500;
+    }
+
+    textarea {
+        @apply bg-gray-200 text-gray-800 rounded-md border-azul-600 w-full;
+         /* focus:border-verde focus:outline-none focus:ring-1 focus:ring-verde placeholder:text-sm; */
+    }
+
+    input[type="file"] {
+        @apply my-3 file:mr-6 file:w-full file:h-10 file:border-none file:text-sm file:font-semibold file:bg-[#34778A]
+    file:text-white text-transparent text-[0px] border border-transparent rounded-l-lg bg-transparent hover:file:bg-[#083c49fd] focus:outline-none focus:ring-0 appearance-none cursor-pointer;
+    }
+
+    td {
+        @apply border-b border-gray-200 p-2;
+    }
+    
+    table tr:nth-child(even) {
+        @apply bg-gray-200;
+    }
+    table tr:nth-child(odd) {
+        @apply bg-white;
+    }
+    
+    th {
+        @apply bg-gray-500 text-white;
+    }
+
+    .label{
+        @apply mb-2 block;
+    }
+}
+
+@layer components {
+    .button {
+        @apply transition ease-out delay-150 text-white font-bold py-2 px-4 mx-1 rounded-md  
+        hover:-translate-y-1 hover:scale-110 duration-300;
+    }
+
+    .button-card {
+        @apply transition ease-out delay-200 text-white font-bold py-2 px-4 mx-1 rounded-md  
+        hover:-translate-y-1 hover:scale-110 duration-300;
+    }
+
+    .button-card button:hover{
+        @apply bg-white;
+    }
+
+    .button-primary {
+        @apply bg-rojo-600 sm:w-auto w-full text-white hover:bg-rojo-800 hover:rounded-lg focus:ring-2 focus:outline-none focus:ring-rojo-900 mt-2;
+    }
+
+    .button-secondary {
+        @apply bg-azul-600 sm:w-auto w-full text-white hover:bg-azul-800 focus:ring-2 focus:outline-none focus:ring-azul-900 mt-2;
+    }
+
+    .fondo{
+        @apply bg-gradient-to-tl from-rojo-600 to-azul-500;
+    }
+}
+
+/* sweetalert2 */
+.swal2-html-container,
+.swal2-text {
+    color: #4d4d4d !important;
+}
+
+.swal2-styled {
+    transition: none !important;
+    box-shadow: none !important;
+}
+
