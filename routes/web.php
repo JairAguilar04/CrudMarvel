@@ -15,5 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//consumimos API marvel y mostramos datos
 Route::get('/', Index::class)->name('dashboard');
+// listamos los registros que hay en DB
 Route::get('/mis-heroes', MisFavoritos::class)->name('mis.favoritos');

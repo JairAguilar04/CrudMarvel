@@ -57,7 +57,10 @@ new class extends Component {
     <div :class="{ 'block': open, 'hidden': !open }" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
-                {{ __('Dashboard') }}
+                {{ __('Universo marvel') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('mis.favoritos')" :active="request()->routeIs('mis.favoritos')" wire:navigate>
+                {{ __('Mis favoritos') }}
             </x-responsive-nav-link>
         </div>
 

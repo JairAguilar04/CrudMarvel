@@ -12,6 +12,7 @@
 
     select:focus,
     input[type="text"]:focus,
+    input[type="checkbox"]:focus,
     textarea {
         @apply focus:border-azul-900 focus:outline-none focus:ring-1 ring-azul-500;
     }
@@ -19,6 +20,10 @@
     textarea {
         @apply bg-gray-200 text-gray-800 rounded-md border-azul-600 w-full;
          /* focus:border-verde focus:outline-none focus:ring-1 focus:ring-verde placeholder:text-sm; */
+    }
+
+    input[type="checkbox"] {
+        @apply text-azul-500 outline-none rounded-full;
     }
 
     input[type="file"] {
@@ -52,25 +57,20 @@
         hover:-translate-y-1 hover:scale-110 duration-300;
     }
 
-    .button-card {
-        @apply transition ease-out delay-200 text-white font-bold py-2 px-4 mx-1 rounded-md  
-        hover:-translate-y-1 hover:scale-110 duration-300;
-    }
-
-    .button-card button:hover{
-        @apply bg-white;
-    }
-
     .button-primary {
-        @apply bg-rojo-600 sm:w-auto w-full text-white hover:bg-rojo-800 hover:rounded-lg focus:ring-2 focus:outline-none focus:ring-rojo-900 mt-2;
-    }
-
-    .button-secondary {
         @apply bg-azul-600 sm:w-auto w-full text-white hover:bg-azul-800 focus:ring-2 focus:outline-none focus:ring-azul-900 mt-2;
     }
 
-    .fondo{
+    .button-secondary {
+        @apply bg-rojo-600 sm:w-auto w-full text-white hover:bg-rojo-800 hover:rounded-lg focus:ring-2 focus:outline-none focus:ring-rojo-900 mt-2;
+    }
+
+    .fondo-modal{
         @apply bg-gradient-to-tl from-rojo-600 to-azul-500;
+    }
+
+    .transision-card{
+        @apply hover:-translate-y-1 hover:scale-110 duration-300;
     }
 }
 

@@ -9,16 +9,19 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
-                    {{-- alerta --}}
+
+                    {{-- alerta para error de DB --}}
                     @session('errorDB')
                         <div class="bg-red-600">
                             {{ Session::get('errorDB') }}
                         </div>
                     @endsession
+
                     <div class="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-5 mt-2">
                         @foreach ($heroes as $heroe)
                             {{-- card heroes --}}
-                            <div class="flex flex-col gap-y-4 p-5 rounded-md bg-rojo-600 button-card hover:bg-azul-600">
+                            <div
+                                class="flex flex-col gap-y-4 p-5 rounded-md bg-rojo-600 transision-card hover:bg-azul-600">
 
                                 {{-- imagen --}}
                                 <div>
@@ -29,11 +32,12 @@
                                 {{-- funcionalidad --}}
                                 <div class="flex items-center justify-between">
                                     <p class="font-bold text-white">{{ $heroe['name'] }}</p>
+                                    {{-- enviamos parametros y acciones al modal --}}
                                     <button type="button"
                                         wire:click="$dispatch('openModal', { component: 'modals.agregar-heroe', arguments: { idHeroe: {{ $heroe['id'] }},
                                         nombre: '{{ $heroe['name'] }}', descripcion: '{{ Str::replace("'", '', $heroe['description']) }}',
-                                        imagen: '{{ $heroe['thumbnail']['path'] . '.' . $heroe['thumbnail']['extension'] }}', accion: 1 }})"
-                                        class="button bg-gray-300 text-gray-800">Ver</button>
+                                        imagen: '{{ $heroe['thumbnail']['path'] . '.' . $heroe['thumbnail']['extension'] }}', formAction: 'save', accion: 1 }})"
+                                        class="button bg-black text-white">Ver</button>
                                 </div>
                             </div>
                         @endforeach
