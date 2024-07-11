@@ -75,14 +75,17 @@
                                     <tr>
                                         <th class="w-[5%]">No.</th>
                                         {{-- mandamos a llamar el metodo para ordenar y le pasamos por parametro el nombre de la columna --}}
-                                        <th class="w-[25%] cursor-pointer" wire:click="ordenarColumna('nombre')">
+                                        <th class="w-[23%] cursor-pointer" wire:click="ordenarColumna('nombre')">
                                             Nombre<span class="pl-1 text-rojo-600 font-bold">&#8645;</span>
                                         </th>
                                         {{-- mandamos a llamar el metodo para ordenar y le pasamos por parametro el nombre de la columna --}}
-                                        <th class="w-[30%] cursor-pointer" wire:click="ordenarColumna('descripcion')">
+                                        <th class="w-[25%] cursor-pointer" wire:click="ordenarColumna('descripcion')">
                                             Descripción<span class="pl-1 text-rojo-600 font-bold">&#8645;</span>
                                         </th>
                                         <th class="w-[15%]">Imagen</th>
+                                        <th class="w-[7%] cursor-pointer" wire:click="ordenarColumna('updated_at')">
+                                            Última modificación<span class="pl-1 text-rojo-600 font-bold">&#8645;</span>
+                                        </th>
                                         <th class="w-[15%]">Acciones</th>
                                     </tr>
                                 </thead>
@@ -98,6 +101,7 @@
                                                     class="w-20 h-20 md:w-24 md:h-24 rounded-md sm:mx-auto mx-0 transision-card">
 
                                             </td>
+                                            <td>{{ $heroe->updated_at->diffForHumans() }}</td>
                                             <td>
                                                 <button type="button"
                                                     wire:click="$dispatch('openModal', { component: 'modals.agregar-heroe', arguments: { id: {{ $heroe->id }}, idHeroe: {{ $heroe->id_heroe != 0 ? $heroe->id_heroe : 0 }}, nombre: '{{ $heroe->nombre }}', descripcion: '{{ $heroe->descripcion }}', imagen: '{{ $heroe->url_imagen }}', formAction: 'update', accion: 3 }})"

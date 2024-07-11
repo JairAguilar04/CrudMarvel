@@ -1,1 +1,1 @@
-<img src="{{ asset('img/logo/marvel.png') }}" alt="Logo marvel" class="w-28">
+<img src="{{ asset('img/logo/marvel.png') }}" alt="Logo marvel" class="w-28 rounded-sm">

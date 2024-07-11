@@ -14,7 +14,7 @@ class MisFavoritos extends Component
 {
     use WithPagination;
 
-    public $columna = 'created_at'; //ordena por columna
+    public $columna = 'updated_at'; //ordena por columna
     public $direccion = 'DESC'; // orden ASC o DESC
     public $search = '';
     public $filas = 5;
