@@ -6,7 +6,6 @@
         @else
             Editar heroe
         @endif
-        {{ $imagen }}
     </x-slot>
 
     {{-- formulario --}}
