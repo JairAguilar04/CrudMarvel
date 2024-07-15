@@ -6,6 +6,7 @@
         @else
             Editar heroe
         @endif
+        {{ $imagen }}
     </x-slot>
 
     {{-- formulario --}}
@@ -22,7 +23,7 @@
                             @if ($accion == 3)
                                 <div class="flex flex-row justify-end items-center gap-x-3 mt-2">
                                     <input type="checkbox" name="updateImagen" id="updateImagen"
-                                        wire:model.live="updateImagen">
+                                        wire:model.live="updateImagen" wire:click="limpiarCampo('imagen')">
                                     <label for="updateImagen">Editar imagen</label>
                                 </div>
                             @endif
@@ -47,13 +48,13 @@
                                     </label>
                                 @endempty
                             @empty(!$imagen)
-                                <div wire:click="limpiarArchivo()" class="absolute -right-2 button">
+                                <div wire:click="limpiarCampo('imagen')" class="absolute -right-2 button">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" class="w-5 h-5">
                                         <path
                                             d="M 7.71875 6.28125 L 6.28125 7.71875 L 23.5625 25 L 6.28125 42.28125 L 7.71875 43.71875 L 25 26.4375 L 42.28125 43.71875 L 43.71875 42.28125 L 26.4375 25 L 43.71875 7.71875 L 42.28125 6.28125 L 25 23.5625 Z" />
                                     </svg>
                                 </div>
-                                <p class="text-gray-800 sm:text-base text-sm pl-2 cursor-pointer">
+                                <p class="text-gray-800 sm:text-sm text-xs pl-2 cursor-pointer">
                                     {{ $accion == 2 ? $imagen->getClientOriginalName() : $imagen }}
                                 </p>
                             @endempty

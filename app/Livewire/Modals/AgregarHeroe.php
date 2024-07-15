@@ -142,8 +142,8 @@ class AgregarHeroe extends ModalComponent
         }
     }
 
-    public function limpiarArchivo()
+    public function limpiarCampo($campo)
     {
-        $this->imagen = null;
+        $this->$campo = null;
     }
 }
